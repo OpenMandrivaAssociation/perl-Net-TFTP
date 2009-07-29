@@ -1,16 +1,18 @@
-%define real_name Net-TFTP
+%define upstream_name    Net-TFTP
+%define upstream_version 0.17
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Net::TFTP - TFTP Client class
-Name:		perl-%{real_name}
-Version:	0.17
-Release: %mkrel 4
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{real_name}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{real_name}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Net::TFTP is a class implementing a simple Trivial File Transfer Protocol
@@ -19,9 +21,8 @@ TFTP Option Extension (as described in RFC2347), with the following options
 
 RFC2348 Blocksize Option
 
-
 %prep
-%setup -q -n %{real_name}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -42,4 +43,3 @@ rm -rf %{buildroot}
 %doc ChangeLog README
 %{perl_vendorlib}/Net/TFTP.pm
 %{_mandir}/*/*
-
