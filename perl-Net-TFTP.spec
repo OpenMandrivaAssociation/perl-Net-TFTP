@@ -1,5 +1,5 @@
 %define upstream_name    Net-TFTP
-%define upstream_version 0.17
+%define upstream_version 0.18
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	Net::TFTP - TFTP Client class
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
@@ -29,7 +29,7 @@ RFC2348 Blocksize Option
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf %{buildroot}
