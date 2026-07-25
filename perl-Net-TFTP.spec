@@ -1,15 +1,15 @@
 %define upstream_name    Net-TFTP
-%define upstream_version 0.19
+%define upstream_version 0.1901
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Net::TFTP - TFTP Client class
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/gbarr/perl-net-tftp
+Source0:	https://cpan.metacpan.org/authors/id/G/GB/GBARR/Net-TFTP-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
