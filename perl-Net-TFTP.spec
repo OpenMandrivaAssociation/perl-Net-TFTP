@@ -1,15 +1,13 @@
 %define upstream_name    Net-TFTP
-%define upstream_version 0.1901
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.1901
+Release:	2
 
 Summary:	Net::TFTP - TFTP Client class
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/gbarr/perl-net-tftp
-Source0:	https://cpan.metacpan.org/authors/id/G/GB/GBARR/Net-TFTP-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/G/GB/GBARR/Net-TFTP-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -26,7 +24,7 @@ TFTP Option Extension (as described in RFC2347), with the following options
 RFC2348 Blocksize Option
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -57,9 +55,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.170.0-1mdv2010.0
 + Revision: 404249
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.17-4mdv2009.0
+- rebuild using %0.1901 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.17-4mdv2009.0
 + Revision: 258135
 - rebuild
 
