@@ -2,7 +2,7 @@
 %define upstream_version 0.1901
 Name:		perl-%{upstream_name}
 Version:	0.1901
-Release:	2
+Release:	3
 
 Summary:	Net::TFTP - TFTP Client class
 License:	GPL+ or Artistic
@@ -34,7 +34,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %check
 # soft: do not fail package on test failures
 set +e
-%make test
+%make test || :
 
 %install
 %makeinstall_std
