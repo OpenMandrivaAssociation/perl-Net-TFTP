@@ -2,7 +2,7 @@
 %define upstream_version 0.1901
 Name:		perl-%{upstream_name}
 Version:	0.1901
-Release:	13
+Release:	1
 
 Summary:	Net::TFTP - TFTP Client class
 License:	GPL+ or Artistic
@@ -29,18 +29,18 @@ RFC2348 Blocksize Option
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
-
+%make_build
 %check
 # soft: do not fail package on test failures
 set +e
+make test || :
 %make test || :
 
 %install
 %makeinstall_std
 
 %files
-%doc ChangeLog README
+%doc ChangeLog META.yml README
 %{perl_vendorlib}/Net/TFTP.pm
 %{_mandir}/*/*
 
