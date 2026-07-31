@@ -2,7 +2,7 @@
 %define upstream_version 0.1901
 Name:		perl-%{upstream_name}
 Version:	0.1901
-Release:	10
+Release:	11
 
 Summary:	Net::TFTP - TFTP Client class
 License:	GPL+ or Artistic
